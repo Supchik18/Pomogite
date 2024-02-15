@@ -1,0 +1,32 @@
+package org.example;
+import java.util.Scanner;
+
+
+public class Main {
+
+    public class TriangleType {
+        public static void main(String[] args) {
+            // Считываем три целых числа с консоли
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите первое число:");
+            int a = scanner.nextInt();
+            System.out.println("Введите второе число:");
+            int b = scanner.nextInt();
+            System.out.println("Введите третье число:");
+            int c = scanner.nextInt();
+
+            // Проверяем условия для различных типов треугольников
+            if ((a * a + b * b == c * c) || (b * b + c * c == a * a) || (c * c + a * a == b * b)) {
+                System.out.println(a + ", " + b + " и " + c + " являются сторонами прямоугольного треугольника");
+            } else if (a == b || b == c || c == a) {
+                System.out.println(a + ", " + b + " и " + c + " являются сторонами равнобедренного треугольника");
+            } else if (a == b && b == c) {
+                System.out.println(a + ", " + b + " и " + c + " являются сторонами равностороннего треугольника");
+            } else if (a + b <= c || b + c <= a || c + a <= b) {
+                System.out.println(a + ", " + b + " и " + c + " не являются сторонами треугольника");
+            } else {
+                System.out.println(a + ", " + b + " и " + c + " являются сторонами обычного треугольника");
+            }
+        }
+    }
+}
